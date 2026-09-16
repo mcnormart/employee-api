@@ -1,0 +1,49 @@
+# Java compiled files
+*.class
+
+# Eclipse build folder
+bin/
+
+# Maven build folder
+target/
+
+# Eclipse workspace metadata
+.metadata/
+
+# Log files
+*.log
+
+# IntelliJ files, just in case
+.idea/
+*.iml
+
+
+#more
+# Ignore everything in MarlinTools
+/*
+
+# Keep this .gitignore file
+!/.gitignore
+
+# Keep src
+!/src/
+
+# Ignore everything directly under src
+/src/*
+
+# Keep com
+!/src/com/
+
+# Ignore everything directly under com
+/src/com/*
+
+# Keep mcn
+!/src/com/mcn/
+
+# Ignore everything directly under mcn
+/src/com/mcn/*
+
+# Keep ct and everything underneath it
+!/src/com/mcn/ct/
+!/src/com/mcn/ct/**
+

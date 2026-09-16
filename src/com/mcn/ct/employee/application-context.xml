@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!-- ***** DAO *****-->
+    <!-- regular dao -->
+    <bean
+
+        id="employeeDao"
+        class="com.mcn.ct.employee.dao.EmployeeDaoImpl">
+
+    </bean>
+    
+
+    <!-- DB dao -->
+    <bean id="dbemployeeDao"
+          class="ccom.mcn.ct.employee.dao.EmployeeDBDaoImpl"/>
+
+    <!-- mock dao -->
+    <bean id="mockemployeeDao"
+          class="com.mcn.ct.employee.dao.EmployeeMockDataDaoImpl"/>
+    
+    
+
+
+
+     <!-- ***** SERVICE *****-->    
+    <!-- regular employee service -->
+    <bean
+
+        id="employeeService"
+        class="com.mcn.ct.employee.service.EmployeeServiceImpl">
+
+
+        <property
+            name="employeeDao"
+            ref="employeeDao" />
+
+
+    </bean>
+
+
+    <!-- contract employee service -->
+    <bean
+
+        id="contractemployeeService"
+        class="com.mcn.ct.employee.service.ContractEmployeeServiceImpl">
+
+
+        <property
+            name="employeeDao"
+            ref="employeeDao" />
+
+    </bean>
+
+
+
+
+
+     <!-- ***** CONTROLLER *****-->
+    <bean
+
+        id="employeeController"       
+        class="com.mcn.ct.employee.controller.EmployeeController">
+
+
+        <property
+            name="employeeService"
+            ref="employeeService" />
+
+	<!-- ****** if i have multiple employee Service
+        <property
+            name="employeeService"
+            ref="contractemployeeService" />
+       -->
+
+    </bean>
+
+
+</beans>       
+    
